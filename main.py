@@ -34,7 +34,7 @@ def generate_numbers(cols=5, size=75):
         numend = int(numstart + (size / 5))
         nums = list(range(numstart, numend))
         for j in range(0, 5):
-            if i == 3 and j == 3:
+            if i == 2 and j == 2:
                 colnums.append('♥')
             else:
                 addnum = nums[random.randint(0, len(nums) - 1)]

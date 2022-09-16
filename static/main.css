@@ -16,7 +16,7 @@ body {
 .tile {
   font-weight: bold;
   border: 1px solid black;
-  border-radius: calc(1.5em / 5);
+  border-radius: calc(2rem / 5);
   aspect-ratio: 1 / 1;
   display: flex;
   justify-content: center;
@@ -34,19 +34,37 @@ body {
   background-color: white;
   color: darkCyan;
 }
+.free-space {
+  font-size: 1.5em;
+}
 .matched {
   background-color: #10733c;
   color: #c5d9d9;
 }
 .bingo {
   color: white;
-  animation: flash 1s ease infinite;
+  animation: flash 1.5s ease infinite;
 }
 
 @keyframes flash {
-  0% {color: white;}
-  49% {color: white;}
-  50% {color: #1ae875;}
-  99% {color: #1ae875;}
-  100% {color: white;}
+  0% {
+    background-color: darkcyan;
+    color: white;
+  }
+  49% {
+    background-color: darkcyan;
+    color: white;
+  }
+  50% {
+    background-color: #1ae875;
+    color: #10733c;
+  }
+  99% {
+    background-color: #1ae875;
+    color: #10733c;
+  }
+  100% {
+    background-color: darkcyan;
+    color: white;
+  }
 }
