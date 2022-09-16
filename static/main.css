@@ -29,6 +29,8 @@ body {
   background-color: darkcyan;
   color: white;
   font-size: 1.5em;
+  animation: flash 1.2s ease infinite;
+  animation-play-state: paused;
 }
 .number {
   background-color: white;
@@ -40,10 +42,6 @@ body {
 .matched {
   background-color: #10733c;
   color: #c5d9d9;
-}
-.bingo {
-  color: white;
-  animation: flash 1.5s ease infinite;
 }
 
 @keyframes flash {
@@ -67,4 +65,7 @@ body {
     background-color: darkcyan;
     color: white;
   }
+}
+.bingo {
+  animation-play-state: running;
 }
