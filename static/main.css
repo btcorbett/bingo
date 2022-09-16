@@ -1,0 +1,52 @@
+body {
+  box-sizing: border-box;
+  margin: 1em auto 0;
+  font-size: 30px;
+  font-family: Monaco, monospace;
+  background-color: #c5d9d9;
+}
+#main-container {
+  width: min(95vw, calc(((3em * 5) + (0.5em * 4))));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, calc(20% - (2em / 5)));
+  justify-content: center;
+  grid-gap: 0.5em;
+}
+.tile {
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: calc(1.5em / 5);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 3em;
+  min-width: 1.25em;
+  box-shadow: 0.2em 0.1em 0.25em lightGrey;
+}
+.phrase {
+  background-color: darkcyan;
+  color: white;
+  font-size: 1.5em;
+}
+.number {
+  background-color: white;
+  color: darkCyan;
+}
+.matched {
+  background-color: #10733c;
+  color: #c5d9d9;
+}
+.bingo {
+  color: white;
+  animation: flash 1s ease infinite;
+}
+
+@keyframes flash {
+  0% {color: white;}
+  49% {color: white;}
+  50% {color: #1ae875;}
+  99% {color: #1ae875;}
+  100% {color: white;}
+}
