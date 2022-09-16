@@ -3,7 +3,7 @@ body {
   margin: 1em auto 0;
   font-size: 30px;
   font-family: Monaco, monospace;
-  background-color: #c5d9d9;
+  background-color: #c5c1c7;
 }
 #main-container {
   width: min(95vw, calc(((3em * 5) + (0.5em * 4))));
@@ -26,7 +26,7 @@ body {
   box-shadow: 0.2em 0.1em 0.25em lightGrey;
 }
 .phrase {
-  background-color: darkcyan;
+  background-color: #58266e;
   color: white;
   font-size: 1.5em;
   animation: flash 1.2s ease infinite;
@@ -34,35 +34,35 @@ body {
 }
 .number {
   background-color: white;
-  color: darkCyan;
+  color: #58266e;
 }
 .free-space {
   font-size: 1.5em;
 }
 .matched {
-  background-color: #10733c;
-  color: #c5d9d9;
+  background-color: #39855b;
+  color: #c5c1c7;
 }
 
 @keyframes flash {
   0% {
-    background-color: darkcyan;
+    background-color: #58266e;
     color: white;
   }
   49% {
-    background-color: darkcyan;
+    background-color: #58266e;
     color: white;
   }
   50% {
     background-color: #1ae875;
-    color: #10733c;
+    color: #58266e;
   }
   99% {
     background-color: #1ae875;
-    color: #10733c;
+    color: #58266e;
   }
   100% {
-    background-color: darkcyan;
+    background-color: #58266e;
     color: white;
   }
 }
