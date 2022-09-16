@@ -41,7 +41,7 @@ body {
 }
 .matched {
   background-color: #39855b;
-  color: #c5c1c7;
+  color: white;
 }
 
 @keyframes flash {

@@ -44,7 +44,21 @@ function checkForBingo() {
     if (rowTiles.length == 5 || colTiles.length == 5) {
       isBingo = true;
       break;
-    }
+    };
+  };
+  if (isBingo) {return isBingo};
+  let topLeftToBottomRight = ['0.0', '1.1', '2.2', '3.3', '4.4'];
+  let bottomLeftToTopRight = ['0.4', '1.3', '2.2', '3.1', '4.0'];
+
+  let topLeftToBottomRightTiles = tileEntries.filter(tile => {
+    return (topLeftToBottomRight.includes(tile[0]) && tile[1]);
+  });
+   let bottomLeftToTopRightTiles = tileEntries.filter(tile => {
+    return (bottomLeftToTopRight.includes(tile[0]) && tile[1]);
+  });
+  if (topLeftToBottomRightTiles.length == 5 || 
+        bottomLeftToTopRightTiles.length == 5) {
+      isBingo = true;
   };
   return isBingo;
 };
