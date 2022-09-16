@@ -1,3 +1,10 @@
+let statusOfTiles = {};
+for (let i = 0; i < 5; i++) {
+  for (let j = 0; j < 5; j++) {
+    statusOfTiles[`${i}.${j}`] = false;
+  };
+}
+
 window.onload = (event) => {
   let numberTiles = document.querySelectorAll('span.number');
   numberTiles.forEach(tile => {

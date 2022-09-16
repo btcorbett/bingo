@@ -34,11 +34,14 @@ def generate_numbers(cols=5, size=75):
         numend = int(numstart + (size / 5))
         nums = list(range(numstart, numend))
         for j in range(0, 5):
-            addnum = nums[random.randint(0, len(nums) - 1)]
-            colnums.append(addnum)
-            try:
-                nums.remove(addnum)
-            except:
-                return 'error'
+            if i == 3 and j == 3:
+                colnums.append('♥')
+            else:
+                addnum = nums[random.randint(0, len(nums) - 1)]
+                colnums.append(addnum)
+                try:
+                    nums.remove(addnum)
+                except:
+                    return 'error'
         numbers.append(colnums)
     return numbers
