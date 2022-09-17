@@ -20,10 +20,20 @@
     {% endfor %}
     {% for i in range(0, 5) %}
       {% for j in range(0, 5) %}
-        <span class='number tile'>{{ numbers[j][i] }}</span>
+        {% if (i == 2) and (j == 2) %}
+          <span id='{{ j }}.{{ i }}' class='number tile free-space'>{{ numbers[j][i] }}</span>
+        {% else %}
+          <span id='{{ j }}.{{ i }}' class='number tile'>{{ numbers[j][i] }}</span>
+        {% endif %}
       {% endfor %}
     {% endfor %}
   </section>
+  {% if admin %}
+    <section>
+      <p id='show-pick' onclick=showPick(this) data-content="">Click to make a pick...</p>
+    </section>
+  {% endif %}
+  
 
   <script 
     type="text/javascript" 

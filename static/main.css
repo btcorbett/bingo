@@ -3,20 +3,34 @@ body {
   margin: 1em auto 0;
   font-size: 30px;
   font-family: Monaco, monospace;
-  background-color: #c5d9d9;
+  background-color: #c5c1c7;
 }
 #main-container {
   width: min(95vw, calc(((3em * 5) + (0.5em * 4))));
-  margin: 0 auto;
+  margin: 0 auto 1em;
   display: grid;
   grid-template-columns: repeat(5, calc(20% - (2em / 5)));
   justify-content: center;
   grid-gap: 0.5em;
 }
+p {
+  width: min(95vw, calc(((3em * 5) + (0.5em * 4))));
+  text-align: center;
+  margin: 0 auto;
+  border-top: 2px solid #58266e;
+  border-bottom: 2px solid #58266e;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  cursor: pointer;
+  
+}
+p::after {
+    content: attr(data-content);
+}
 .tile {
   font-weight: bold;
   border: 1px solid black;
-  border-radius: calc(1.5em / 5);
+  border-radius: calc(2rem / 5);
   aspect-ratio: 1 / 1;
   display: flex;
   justify-content: center;
@@ -26,27 +40,46 @@ body {
   box-shadow: 0.2em 0.1em 0.25em lightGrey;
 }
 .phrase {
-  background-color: darkcyan;
+  background-color: #58266e;
   color: white;
   font-size: 1.5em;
+  animation: flash 1.2s ease infinite;
+  animation-play-state: paused;
 }
 .number {
   background-color: white;
-  color: darkCyan;
+  color: #58266e;
+}
+.free-space {
+  font-size: 1.5em;
 }
 .matched {
-  background-color: #10733c;
-  color: #c5d9d9;
-}
-.bingo {
+  background-color: #39855b;
   color: white;
-  animation: flash 1s ease infinite;
 }
 
 @keyframes flash {
-  0% {color: white;}
-  49% {color: white;}
-  50% {color: #1ae875;}
-  99% {color: #1ae875;}
-  100% {color: white;}
+  0% {
+    background-color: #58266e;
+    color: white;
+  }
+  49% {
+    background-color: #58266e;
+    color: white;
+  }
+  50% {
+    background-color: #1ae875;
+    color: #58266e;
+  }
+  99% {
+    background-color: #1ae875;
+    color: #58266e;
+  }
+  100% {
+    background-color: #58266e;
+    color: white;
+  }
+}
+.bingo {
+  animation-play-state: running;
 }
