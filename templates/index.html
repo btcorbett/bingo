@@ -16,7 +16,7 @@
 <body>
   <section id='main-container'>
     {% for chr in phrase %}
-      <span class='phrase tile not-bingo'>{{ chr }}</span>
+      <span class='phrase tile'>{{ chr }}</span>
     {% endfor %}
     {% for i in range(0, 5) %}
       {% for j in range(0, 5) %}
@@ -28,6 +28,12 @@
       {% endfor %}
     {% endfor %}
   </section>
+  {% if admin %}
+    <section>
+      <p id='show-pick' onclick=showPick(this) data-content="">Click to make a pick...</p>
+    </section>
+  {% endif %}
+  
 
   <script 
     type="text/javascript" 

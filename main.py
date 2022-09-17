@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 from threading import Thread
 import random
 
@@ -10,8 +10,16 @@ def home():
     numbers = generate_numbers()
     return render_template('index.html',
                            phrase=list('bingo'.upper()),
-                           numbers=numbers)
+                           numbers=numbers,
+                           admin=False)
 
+@app.route('/admin')
+def home_admin():
+    numbers = generate_numbers()
+    return render_template('index.html',
+                           phrase=list('bingo'.upper()),
+                           numbers=numbers,
+                           admin=True)
 
 def run():
     from waitress import serve

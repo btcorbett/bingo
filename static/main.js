@@ -1,5 +1,6 @@
 const phraseTiles = document.querySelectorAll('.phrase');
 let bingoResult = false;
+let picked = [];
 
 let statusOfTiles = {};
 for (let i = 0; i < 5; i++) {
@@ -62,3 +63,24 @@ function checkForBingo() {
   };
   return isBingo;
 };
+
+function showPick(pElement) {
+  pElement.innerText = '';
+  pElement.setAttribute('data-content', makePick());
+}
+
+function makePick(pickedNumber = 0) {
+  let possibleNumbers = [...Array(75).keys()].map(x => x + 1);
+  possibleNumbers = possibleNumbers.filter(num => !picked.includes(num));
+  if (possibleNumbers.length) {
+    if (!pickedNumber) {
+      pickedNumber = possibleNumbers[parseInt(Math.random() * possibleNumbers.length)];
+    };
+    let pickedCol = 'BINGO'.substr(parseInt((pickedNumber - 1) / 15), 1);
+    picked.push(pickedNumber);
+    return `${pickedCol}-${pickedNumber}`;
+  } else {
+    document.querySelector('#show-pick').removeAttribute('onclick');
+    return 'All numbers have been chosen!';
+  };
+}

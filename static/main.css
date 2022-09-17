@@ -7,11 +7,25 @@ body {
 }
 #main-container {
   width: min(95vw, calc(((3em * 5) + (0.5em * 4))));
-  margin: 0 auto;
+  margin: 0 auto 1em;
   display: grid;
   grid-template-columns: repeat(5, calc(20% - (2em / 5)));
   justify-content: center;
   grid-gap: 0.5em;
+}
+p {
+  width: min(95vw, calc(((3em * 5) + (0.5em * 4))));
+  text-align: center;
+  margin: 0 auto;
+  border-top: 2px solid #58266e;
+  border-bottom: 2px solid #58266e;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  cursor: pointer;
+  
+}
+p::after {
+    content: attr(data-content);
 }
 .tile {
   font-weight: bold;
