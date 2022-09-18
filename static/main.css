@@ -19,6 +19,7 @@ p {
   margin: 0 auto;
   border-top: 2px solid #58266e;
   border-bottom: 2px solid #58266e;
+  color: #58266e;
   font-size: 1.5rem;
   padding: 1rem 0;
   cursor: pointer;
