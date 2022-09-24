@@ -1,6 +1,6 @@
 body {
   box-sizing: border-box;
-  margin: 1em auto 0;
+  margin: 0.25em auto 0;
   font-size: 30px;
   font-family: Monaco, monospace;
   background-color: #c5c1c7;
@@ -17,7 +17,7 @@ body {
   width: min(95vw, calc(((3em * 5) + (0.5em * 4))));
   margin: 1em auto 1em;
   display: grid;
-  grid-template-columns: repeat(8, calc(12.5% - (3.5em / 8)));
+  grid-template-columns: repeat(6, calc(16.67% - (2.5em / 6)));
   justify-content: center;
   grid-gap: 0.5em;
   
@@ -51,13 +51,13 @@ p::after {
 }
 .pick-tile {
   border: 1px solid black;
-  border-radius: calc(3.5rem / 8);
-  padding: 0.25em 0. 1em;
+  border-radius: calc(2.5rem / 6);
+  padding: 0.25em 0.1em;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0.2em 0.1em 0.25em lightGrey;
-  font-size: 0.75rem;
+  font-size: 1rem;
   background-color: white;
   color: #58266e;
 }
