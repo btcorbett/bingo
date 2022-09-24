@@ -1,5 +1,6 @@
 const phraseTiles = document.querySelectorAll('.phrase');
 let bingoResult = false;
+const displayPicks = document.getElementById('picks');
 let picked = [];
 
 let statusOfTiles = {};
@@ -65,7 +66,11 @@ function checkForBingo() {
 };
 
 function showPick(pElement) {
-  pElement.innerText = '';
+  if (pElement.innerText == 'Click to make a pick...') {
+    pElement.innerText = ''; 
+  } else {
+    storePick(pElement.getAttribute('data-content'));
+  }
   pElement.setAttribute('data-content', makePick());
 }
 
@@ -83,4 +88,11 @@ function makePick(pickedNumber = 0) {
     document.querySelector('#show-pick').removeAttribute('onclick');
     return 'All numbers have been chosen!';
   };
+}
+
+function storePick(pick) {
+  let newPick = document.createElement('span');
+  newPick.setAttribute('class', 'pick-tile');
+  newPick.setAttribute('data-pick', pick);
+  displayPicks.prepend(newPick);
 }
