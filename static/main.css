@@ -52,12 +52,12 @@ p::after {
 .pick-tile {
   border: 1px solid black;
   border-radius: calc(3.5rem / 8);
-  aspect-ratio: 1 / 1;
+  padding: 0.25em 0. 1em;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0.2em 0.1em 0.25em lightGrey;
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   background-color: white;
   color: #58266e;
 }
